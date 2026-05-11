@@ -459,7 +459,8 @@ var arrays = {
 		  "ARTICUNO",
 		  "ZAPDOS",
 		  "MOLTRES",
-		  "DRAGONITE"
+		  "DRAGONITE",
+		  "TEENYGU"
 		],
 		[
 		  "HOOTHOOT",
