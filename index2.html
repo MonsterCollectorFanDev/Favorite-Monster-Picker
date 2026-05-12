@@ -10,5 +10,364 @@
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <!-- Replace these later -->
 <link rel="manifest" href="site.webmanifest">
+<style>
+
+@font-face {
+    font-family: "AboutFriends";
+    src: url("fonts/About_friend_v5_by_matthewtheprep_dcxxxbw.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+#grid-wrapper {
+	position: absolute;
+	top: 35px;
+	left: 0px;
+}
+#typebar {
+	position: absolute;
+	left: 98px;
+	top: 0px;
+	z-index: 3;
+}
+img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.back {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#final {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#button-wrapper {
+  top: 1572px;
+  left: 0px;
+  height: 50px;
+  position: absolute;
+  width: 1000px;
+}
+#btnPrint {
+	display: inline-block;
+	height: 50px;
+}
+#btnExport {
+	display: inline-block;
+	height: 50px;
+}
+#btnLoad {
+	display: inline-block;
+	height: 50px;
+}
+#btnReset {
+  top: 1572px;
+  left: 490px;
+  height: 50px;
+}
+#import {
+  top: 1640px;
+  position: absolute;
+  z-index: 4;
+}
+#credits {
+	top: 1610px;
+	left: 600px;
+	width: 600px;
+	position: absolute;
+}
+.bubble {
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 25px;
+  background: #b4b4b4;
+	border-style: solid;
+	border-width: 2px;
+}
+.aura {
+  z-index: 0;
+  position: absolute;
+  height: 96px;
+  width: 96px;
+}
+#actual-btn {
+  z-index: 6;
+  position: absolute;
+  top: 1410px;
+  left: 1660px;
+}
+#charm {
+  z-index: 1;
+  position: absolute;
+  left: 25px;
+  top: 1110px;
+  cursor: pointer;
+}
+#teamInstructions {
+  top: 1460px;
+  left: 7px;
+  width: 480px;
+}
+.preview {
+  z-index: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+</style>
+<style id="selection-placement">
+.translate-wrapper {
+	position: absolute;
+	width: 200px;
+	height: 100px;
+}
+.grid-text {
+	font-family: "AboutFriends";
+	position: absolute;
+	color: white;
+	font-size: 27;
+	z-index: 3;
+	text-align: center;
+	width: inherit;
+	bottom: 35%;
+}
+.msg-text {
+	font-family: "AboutFriends";
+	position: absolute;
+	color: white;
+	font-size: 24;
+	z-index: 3;
+	text-align: left;
+	width: inherit;
+	bottom: 35%;
+}
+.selectionBox {
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+}
+.neutral-box {
+	top: 101px;
+}
+.fire-box {
+	top: 200px;
+}
+.water-3-box {
+	top: 299px;
+}
+.wind-box {
+	top: 398px;
+}
+.earth-box {
+	top: 497px;
+}
+.light-box {
+	top: 596px;
+}
+.dark-box {
+	top: 695px;
+}
+.gen-8-box {
+	top: 794px;
+}
+.gen-9-box {
+	top: 893px;
+}
+.fav-type-box {
+	top: 992px;
+}
+.bottom-row1-box {
+	top: 1210px;
+}
+.bottom-row2-box {
+	top: 1409px;
+}
+.bottom-row1-label {
+	top: 1132px;
+}
+.bottom-row2-label {
+	top: 1331px;
+}
+.type-1-box {
+	left: 100px;
+}
+.type-2-box {
+	left: 199px;
+}
+.type-3-box {
+	left: 298px;
+}
+.type-4-box {
+	left: 397px;
+}
+.type-5-box {
+	left: 496px;
+}
+.type-6-box {
+	left: 595px;
+}
+.type-7-box {
+	left: 694px;
+}
+.type-8-box {
+	left: 793px;
+}
+.type-9-box {
+	left: 892px;
+}
+.type-10-box {
+	left: 991px;
+}
+.type-11-box {
+	left: 1090px;
+}
+.type-12-box {
+	left: 1189px;
+}
+.type-13-box {
+	left: 1288px;
+}
+.type-14-box {
+	left: 1387px;
+}
+.type-15-box {
+	left: 1486px;
+}
+.type-16-box {
+	left: 1585px;
+}
+.type-17-box {
+	left: 1684px;
+}
+.type-18-box {
+	left: 1783px;
+}
+.type-19-box {
+	left: 1882px;
+}
+.type-20-box {
+	left: 1981px;
+}
+.type-21-box {
+	left: 2080px;
+}
+.type-22-box {
+	left: 2179px;
+}
+.team-top {
+	top: 1264px;
+}
+.team-bottom {
+	top: 1363px;
+}
+.team-left {
+	left: 94px;
+}
+.team-mid {
+	left: 193px;
+}
+.team-right {
+	left: 292px;
+}
+.bottom-box-1 {
+	left: 521px;
+}
+.bottom-box-2 {
+	left: 703px;
+}
+.bottom-box-3 {
+	left: 885px;
+}
+.bottom-box-4 {
+	left: 1065px;
+}
+.bottom-box-5 {
+	left: 1248px;
+}
+.bottom-box-6 {
+	left: 1430px;
+}
+.bottom-box-7 {
+	left: 1612px;
+}
+.bottom-box-8 {
+	left: 1794px;
+}
+.bottom-box-9 {
+	left: 1976px;
+}
+.bottom-box-10 {
+	left: 2158px;
+}
+.bottom-box-1-label {
+	left: 469px;
+}
+.bottom-box-2-label {
+	left: 651px;
+}
+.bottom-box-3-label {
+	left: 833px;
+}
+.bottom-box-4-label {
+	left: 1015px;
+}
+.bottom-box-5-label {
+	left: 1196px;
+}
+.bottom-box-6-label {
+	left: 1378px;
+}
+.bottom-box-7-label {
+	left: 1560px;
+}
+.bottom-box-8-label {
+	left: 1742px;
+}
+.bottom-box-9-label {
+	left: 1924px;
+}
+.bottom-box-10-label {
+	left: 2106px;
+}
+#type-wrapper {
+  top: 0px;
+  left: 98px;
+  height: 100px;
+  position: absolute;
+  width: 2200px;
+}
+.type-box {
+	width: 99px;
+	height: 100px;
+	display: inline-block;
+}
+.type-text {
+	filter: drop-shadow(2px 2px 0px #000);
+	font-family: "AboutFriends";
+	color: white;
+	font-size: 25;
+	z-index: 3;
+	text-align: center;
+	width: inherit;
+	position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+</style>
 </head>
 </html>
