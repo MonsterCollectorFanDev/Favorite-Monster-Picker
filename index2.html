@@ -370,5 +370,26 @@ canvas {
 </style>
 <script src="mystikatalog.js"></script>
 <script src="monster_arrays.js"></script>
+<script language ="JavaScript">
+    var choices = [];
+    var currently_previewing = [];
+    var currently_selecting = null;
+    var spriteFile = "Monsters";
+    var teamSelect = false;
+
+    function resetChoices() {
+		choices = [[]];
+		for(var c in other_order)
+			choices[0].push("")
+		for(var i=1; i<=10; i++) {
+			choices.push([]);
+			for(var t in type_order) {
+				choices[i].push("")
+			}
+		}
+	}
+	resetChoices();
+</script>
+
 </head>
 </html>
